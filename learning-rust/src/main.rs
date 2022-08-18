@@ -70,4 +70,8 @@ fn main() {
 
  println!("{},{},{},{}",c3,c1,c2,c3);
 
+ //** VARIABLES **//
+
+//  let(first_number:i32, second_number:f64) = (666,4.20);
+//  println!("{},{}"first_number,second_number);
 }
