@@ -74,4 +74,60 @@ fn main() {
 
 //  let(first_number:i32, second_number:f64) = (666,4.20);
 //  println!("{},{}"first_number,second_number);
+
+//** SHADOWING **//
+
+// refers to the concept of using or declaring a variable that has previously been used
+
+// you can keep on redeclaring the same variable with a different value
+
+let s:i32 = 5;
+let s:i32 =5*5;
+let s:i32 = 65;
+
+println!("{}",s);
+
+// here the second variable is treated as immutable 
+let mut s:i32 = 5;
+let s:i32 =5*5;
+ 
+println!("{}",s);
+
+// changing type of variable
+
+let s:i32 = 6;
+let s:char = 'A';
+
+println!("{}",s);
+
+// redeclaring mutable variables inside functions
+
+let mut s:i32 = 55;
+
+{
+   let s:i32 = 30;
+   println!("The value of the variable in inner scope
+    is {}",s);
+}
+
+println!("The value of s outside is {}",s);
+
+//** CONSTANTS **//
+
+const MAX_AMOUNT:i64 = 1000_000;
+
+//** STRINGS **//
+
+// string slices cannot grow in value, have a fixed length
+
+let sentence:&str = "fixed length";
+
+let mut growable_string:String = String::from("welcome to Earth ");
+
+let alien:char = '\u{1F47D}';
+growable_string.push(alien);
+println!("{}",growable_string);
+
+growable_string.pop();
+println!("{}",growable_string);
 }
